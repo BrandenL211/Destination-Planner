@@ -24,6 +24,10 @@ app.get('/', function (req, res) {
     res.sendFile('dist/index.html');
 });
 
+const GEONAMES_USERNAME = process.env.GEONAMES_USERNAME;
+const WEATHER_BIT_API = process.env.WEATHER_BIT_API;
+const PIXABAY_API = process.env.PIXABAY_API;
+
 // Setup Server
 const port = 8000;
 
@@ -31,6 +35,14 @@ const server = app.listen(port, listening);
 function listening() {
     console.log(`running on localhost: ${port}`);
 };
+
+app.get('/key_data', (req, res) => {
+    res.send({
+        GEONAMES_USERNAME: GEONAMES_USERNAME,
+        WEATHER_BIT_API: WEATHER_BIT_API,
+        PIXABAY_API: PIXABAY_API
+    });
+});
 
 app.post('/addWeather', addWeather);
 

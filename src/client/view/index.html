@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vacation Weather Check</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Roboto:wght@300;400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+ 
+  <section class="bg-light text-center">
+    <div class="container container--narrow">
+      <h1>Let's go on a trip around the world!!</h1>
+
+    </div>
+  </section>
+
+
+  <section class="bg-primary">
+    <div class="container">
+      <div class="split">
+        <div>
+          <img src="img/SingaporeTrees.jpg" alt="Singapore Tree's Light Show">
+        </div>
+        <div>
+          <h2>Where would you like to go?</h2>
+          <div class ="holder zip">
+            <label for="zip">City/Country</label>
+            <input type="text" id="zip" placeholder="Enter a City or Country">
+          </div>
+          <div class ="holder feel">
+            <label for="feelings">Dep. Date</label>
+            <input type="text" class= "myInput" id="feelings" placeholder="MM/DD/YYYY">
+            <button id="generate" type = "submit"> Generate </button>
+          </div>
+        </div>
+      </div>
+      <section hidden id = "spot">
+
+      </section>
+    </div>
+  </section>
+
+  
+
+
+  <script src="app.js" type="text/javascript"></script>
+</body>
+
+</html>
