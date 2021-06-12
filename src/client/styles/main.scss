@@ -1,0 +1,240 @@
+:root {
+    --clr-primary-200: #f3eed9;
+    --clr-primary-400: red;
+  
+    --clr-neutral-100: #fff;
+    --clr-neutral-900: #222c2a;
+  
+    --ff-primary: "Roboto", sans-serif;
+    --ff-accent: "Playfair Display", serif;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--ff-primary);
+    font-weight: 400;
+    font-size: 1.3125rem;
+    line-height: 1.6;
+    height:100vh;
+    justify-content: center;
+    background-color: black;
+    flex-wrap: wrap;
+    display: grid;
+    grid-auto-flow: row;
+  }
+
+  /*#app {
+    height:100vh;
+   
+    justify-content: center;
+    background-color: black;
+    flex-wrap: wrap;
+    display: grid;
+    grid-auto-flow: row;
+  }*/
+  
+  body,
+  h1,
+  h3 {
+    margin: 0;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #0d0d0d;
+    margin-bottom: 1.5rem;
+    font-family: var(--ff-primary);
+  }
+  
+  p {
+    font-size: 1.6rem;
+    letter-spacing: 0.1rem;
+    line-height: 1.7;
+    color: #000000;
+    margin-bottom: 2.5rem;
+    font-family: var(--ff-accent);
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: var(--clr-primary-400);
+    font-family: var(--ff-accent);
+    font-weight: 900;
+    line-height: 1;
+  }
+  
+  h3 {
+    margin-bottom: 1em;
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+
+  .entry {
+    display: flex;
+    background: rgba(59, 74, 107, .4);
+    max-width: 100%;
+    margin-bottom: 2em;
+  }
+
+  .entry img {
+    float: left;
+    max-width: 50%;
+  }
+
+  input{
+    display:block;
+    height: 30px;
+    width: 120px;
+    background:#22b2da;
+    color: #f0d43a;
+    font-size: 10px;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+}
+
+  /*button {
+    background: #3b4a6b;
+    color: #f0d43a;
+    font-size: 10px;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+    box-shadow: 2px 4px 5px #444;
+}*/
+
+  header,
+  section {
+      padding: 7rem 0;
+  }
+
+ .container {
+     margin-inline: auto;
+     width: min(90%, 70.5rem)
+ }
+
+ .split {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: row;
+ }
+
+ .split > * {
+     flex-basis: 100%;
+     font-family: var(--ff-accent);
+ }
+
+ .split > * + * {
+     margin-left: 2em;
+     font-family: var(--ff-accent);
+ }
+
+ .container--narrow {
+    max-width: 34rem;
+  }
+
+  .grid-item {
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 0.2s;
+    margin-bottom: 3em;
+  }
+  
+  .grid-item:hover {
+    transform: translateY(-0.5%);
+    box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
+  }
+  
+  .card-img {
+    display: block;
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+  }
+  
+  .card-content {
+    padding: 3rem;
+  }
+  
+  button,
+  .card-btn {
+    display: block;
+    width: 55%;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #3363ff;
+    background-color: #d8e0fd;
+    border: none;
+    border-radius: 0.4rem;
+    transition: 0.2s;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+  }
+  
+  .card-btn span {
+    margin-left: 1rem;
+    transition: 0.2s;
+  }
+  
+  .card-btn:hover,
+  .card-btn:active {
+    background-color: #c2cffc;
+  }
+  
+  .card-btn:hover span,
+  .card-btn:active span {
+    margin-left: 1.5rem;
+  }
+  
+  .bg-light {
+    background-color: var(--clr-primary-200);
+  }
+  
+  .bg-primary {
+    color: var(--clr-neutral-100);
+    background-color: var(--clr-primary-400);
+  }
+  
+  .bg-dark {
+    color: var(--clr-neutral-100);
+    background-color: var(--clr-neutral-900);
+  }
+  
+  .bg-primary h2,
+  .bg-dark h2 {
+    color: var(--clr-primary-200);
+  }
+
+  @media screen and (max-width: 768px) {
+       body {
+           grid-auto-flow: column;
+       }
+
+       header,
+       section {
+           padding: 4rem, 0;
+       }
+
+       .split {
+           flex-direction: column;
+       }
+  }
