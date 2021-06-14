@@ -28,20 +28,19 @@
     <div class="container">
       <div class="split">
         <div>
-          <img src="img/SingaporeTrees.jpg" alt="Singapore Tree's Light Show">
+          <img src="./src/client/img/SingaporeTrees.jpg" alt="Singapore Tree's Light Show">
         </div>
-        <div>
-          <h2>Where would you like to go?</h2>
-          <div class ="holder zip">
-            <label for="zip">City/Country</label>
-            <input type="text" id="zip" placeholder="Enter a City or Country">
-          </div>
-          <div class ="holder feel">
-            <label for="feelings">Dep. Date</label>
-            <input type="text" class= "myInput" id="feelings" placeholder="MM/DD/YYYY">
+        
+          
+          <form class="search-form" onsubmit="return Client.handleSubmit(event)">
+            <h2>Where would you like to go?</h2>
+            <label for="dest">City/Country</label>
+            <input type="text" id="dest" placeholder="Enter a City or Country"><br>
+            <label for="depDate">Dep. Date</label>
+            <input type="text" class= "myInput" id="depDate" placeholder="MM/DD/YYYY">
             <button id="generate" type = "submit"> Generate </button>
-          </div>
-        </div>
+          </form>
+        
       </div>
       <section hidden id = "spot">
 
