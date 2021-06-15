@@ -1,3 +1,6 @@
+/*Global Variable to select the Section tag I am updating*/
+const sect = document.querySelector("#spot");
+
 const updateUI = (res) => {
     const {temps, feelings, date} = res;
 

@@ -8,7 +8,6 @@ let d = new Date();
 let newDate = d.getMonth() + 1 +'/'+ d.getDate()+'/'+ d.getFullYear();
 let date2 = new Date(newDate);
 
-const sect = document.querySelector("#spot");
 document.getElementById('generate').addEventListener('click', performAction);
 
 
@@ -73,7 +72,9 @@ const postData = async ( url = '', data = {}) => {
         }
 }
 
-function weatherBitGet (lat, lng, place, feels, WEATHER_BIT_API, PIXABAY_API) {
+function weatherBitGet (lat, lng, place, feels, PIXABAY_API, WEATHER_BIT_API) {
+    console.log(PIXABAY_API);
+    console.log(WEATHER_BIT_API);
     fetch(`https://api.weatherbit.io/v2.0/forecast/daily?lat=${lat}&lon=${lng}&key=${WEATHER_BIT_API}`)
 
     .then((response) => response.json())
@@ -97,9 +98,9 @@ function pixaImage (place, futureTemp, feels, PIXABAY_API) {
 
         let img = data.hits[0].webformatURL;
 
-        postData('/addWeather', {temps:futureTemp, date:img, feelings:feels})
+        postData('http://localhost:8000/addWeather', {temps:futureTemp, date:img, feelings:feels})
 
-        fetch('/all')
+        fetch('http://localhost:8000/all')
         .then((response) => response.json())
         .then((response) => updateUI(response));
 
