@@ -31,7 +31,7 @@ function performAction(e) {
 
 
     getWeather(baseURL, newCountry, apiKey) 
-
+  
     .then(function (data) {
         let lat = data.geonames[0].lat;
         let lng = data.geonames[0].lng;
