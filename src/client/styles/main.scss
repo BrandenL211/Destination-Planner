@@ -74,6 +74,9 @@ h3 {
   margin-bottom: 1em;
 }
 
+.search-form h2, label {
+  color: var(--clr-primary-400);
+}
 /*
 .search-form {
   display: flex;
@@ -89,9 +92,13 @@ h3 {
   box-shadow: 0 1px 3px hsla(0%, 0%, 0%, 0.2);
 }
 */
-img {
+.pic-div img {
   display: block;
+  height: auto;
   max-width: 100%;
+  border: none;
+  border-radius: 0.4rem;
+  transition: 0.2s;
 }
 
 .text-center {
@@ -112,11 +119,11 @@ img {
 
 input{
   display:block;
-  height: 40px;
-  width: 140px;
+  height: 50px;
+  width: 310px;
   background:#22b2da;
-  color: #f0d43a;
-  font-size: 10px;
+  color: #0c0b07;
+  font-size: 30px;
   font-family: 'Oswald', sans-serif;
   border: none;
 }
@@ -137,7 +144,12 @@ section {
 
 .container {
    margin-inline: auto;
-   width: min(90%, 70.5rem)
+   width: unquote("min(90%, 70.5rem)");
+}
+
+.container h1 {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 100px;
 }
 
 .split {
@@ -158,7 +170,7 @@ section {
 }
 
 .container--narrow {
-  max-width: 34rem;
+  max-width: 100%;
 }
 
 .grid-item {
@@ -189,7 +201,6 @@ section {
   padding: 3rem;
 }
 
-button,
 .card-btn {
   display: block;
   width: 45%;
@@ -207,19 +218,9 @@ button,
   letter-spacing: 0.1rem;
 }
 
-.card-btn span {
-  margin-left: 1rem;
-  transition: 0.2s;
-}
-
 .card-btn:hover,
 .card-btn:active {
-  background-color: #c2cffc;
-}
-
-.card-btn:hover span,
-.card-btn:active span {
-  margin-left: 1.5rem;
+  background-color: #6b7cb6;
 }
 
 .bg-light {
@@ -238,7 +239,7 @@ button,
 
 .bg-primary h2,
 .bg-dark h2 {
-  color: var(--clr-primary-200);
+  color: var(--clr-primary-400);
 }
 
 @media screen and (max-width: 768px) {
