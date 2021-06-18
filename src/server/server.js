@@ -1,5 +1,5 @@
 // Setup empty JS object to act as endpoint for all routes
-projectData = {};
+let projectData = {};
 
 /* Dependencies */
 const bodyParser = require('body-parser');
@@ -64,4 +64,8 @@ app.get('/all', getData);
 function getData(req, res) {
     res.send(projectData);
     console.log(projectData);
+}
+
+module.exports = {
+    app
 }

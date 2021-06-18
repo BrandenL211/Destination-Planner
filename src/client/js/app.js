@@ -2,13 +2,12 @@ import {updateUI} from './updateUI';
 
 /* Global Variables */
 const baseURL = 'http://api.geonames.org/searchJSON?q=';
+const sect = document.querySelector("#spot");
 
 // Create a new date instance dynamically with JS
 let d = new Date();
 let newDate = d.getMonth() + 1 +'/'+ d.getDate()+'/'+ d.getFullYear();
 let date2 = new Date(newDate);
-
-document.getElementById('generate').addEventListener('click', performAction);
 
 
 function performAction(e) {
@@ -28,6 +27,12 @@ function performAction(e) {
     const date1 = new Date(vacDate);
     const diffInTime = date1.getTime() - date2.getTime();
     const feels = diffInTime / (1000 * 3600 * 24);
+
+    if (newCountry === '' || vacDate === '') {
+        console.log('no input written');
+        alert('Please enter your destination and departure date');
+        return 'empty';
+    }
 
 
     getWeather(baseURL, newCountry, apiKey) 
@@ -73,8 +78,7 @@ const postData = async ( url = '', data = {}) => {
 }
 
 function weatherBitGet (lat, lng, place, feels, PIXABAY_API, WEATHER_BIT_API) {
-    console.log(PIXABAY_API);
-    console.log(WEATHER_BIT_API);
+    
     fetch(`https://api.weatherbit.io/v2.0/forecast/daily?lat=${lat}&lon=${lng}&key=${WEATHER_BIT_API}`)
 
     .then((response) => response.json())
@@ -104,7 +108,6 @@ function pixaImage (place, futureTemp, feels, PIXABAY_API) {
         .then((response) => response.json())
         .then((response) => updateUI(response));
 
-        //updateUI()
     });
 
 }
@@ -121,34 +124,5 @@ const getWeather = async (baseURL, country, key) => {
     }
 }
 
-/*const updateUI = (res) => {
-    const {temps, feelings, date} = res;
-
-    const div1 = document.createElement("div");
-    const div2 = document.createElement("div");
-
-    div1.setAttribute("class", "grid-item");
-    div2.setAttribute("class", "card-content");
-    let results = document.createElement('h2');
-    results.innerHTML = "Your Results:";
-    let Temp = document.createElement('p');
-    Temp.innerHTML = `Temperature: ${temps}`;
-    let Feel = document.createElement('p');
-    Feel.innerHTML = `Your trip is in: ${feelings} days`;
-    let Pic = document.createElement('img');
-    Pic.setAttribute("src", `${date}`);
-    let butt = document.createElement('button');
-    butt.setAttribute("class", "card-btn");
-    butt.innerHTML = "Delete";
-    sect.removeAttribute("hidden");
-
-    div1.append(Pic);
-    div2.append(results);
-    div2.append(Temp);
-    div2.append(Feel);
-    div2.append(butt);
-    sect.appendChild(div1);
-    div1.appendChild(div2);
-}*/
 
 export {performAction, weatherBitGet, deleteTrip, pixaImage};

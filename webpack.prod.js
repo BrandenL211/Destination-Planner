@@ -1,16 +1,16 @@
-const path = require('path')
-const webpack = require('webpack')
-const HtmlWebPackPlugin = require("html-webpack-plugin")
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const WorkboxPlugin = require('workbox-webpack-plugin')
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
     entry: './src/client/index.js',
     mode: 'production',
     output:{
         libraryTarget: 'var',
-        library: 'Client'
+        library: 'Client',
     },
     module: {
         rules: [
@@ -22,8 +22,19 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [ MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
-            }
-        ]
+            },
+            {
+                test:/\.(png|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: "file-loader?name=/client/img/[name].[ext]"
+                      /*  options: {
+                            name: '/src/client/img/[name].[ext]'
+                        }*/
+                    }
+                ]
+            },
+        ],
     },
     plugins: [
         new HtmlWebPackPlugin({
@@ -37,9 +48,9 @@ module.exports = {
             verbose: true,
             // Automatically remove all unused webpack assets on rebuild
             cleanStaleWebpackAssets: true,
-            protectWebpackAssets: false
+            protectWebpackAssets: false,
         }),
         new MiniCssExtractPlugin({ filename: "[name].css"}),
-        new WorkboxPlugin.GenerateSW()
-    ]
-}
+        new WorkboxPlugin.GenerateSW(),
+    ],
+};

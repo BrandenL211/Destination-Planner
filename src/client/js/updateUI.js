@@ -1,5 +1,7 @@
 /*Global Variable to select the Section tag I am updating*/
 const sect = document.querySelector("#spot");
+const resetDate = document.getElementById("depDate").value;
+const resetDest = document.getElementById("dest").value;
 
 const updateUI = (res) => {
     const {temps, feelings, date} = res;
@@ -29,6 +31,9 @@ const updateUI = (res) => {
     div2.append(butt);
     sect.appendChild(div1);
     div1.appendChild(div2);
+
+   // resetDate.setAttribute("placeholder", "MM/DD/YYYY");
+   // resetDest.innerHTML = "";
 }
 
 export {updateUI};
