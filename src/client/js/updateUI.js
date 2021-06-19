@@ -1,7 +1,6 @@
 /*Global Variable to select the Section tag I am updating*/
 const sect = document.querySelector("#spot");
-const resetDate = document.getElementById("depDate").value;
-const resetDest = document.getElementById("dest").value;
+
 
 const updateUI = (res) => {
     const {temps, feelings, date} = res;
