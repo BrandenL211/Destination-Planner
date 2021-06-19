@@ -9,7 +9,7 @@ const updateUI = (res) => {
     const div1 = document.createElement("div");
     const div2 = document.createElement("div");
 
-    div1.setAttribute("class", "grid-item");
+    div1.setAttribute("class", "grid-item split");
     div2.setAttribute("class", "card-content");
     let results = document.createElement('h2');
     results.innerHTML = "Your Results:";

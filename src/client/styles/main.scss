@@ -81,18 +81,6 @@ h3 {
   text-align: center;
 }
 
-.entry {
-  display: flex;
-  background: rgba(59, 74, 107, .4);
-  max-width: 100%;
-  margin-bottom: 2em;
-}
-
-.entry img {
-  float: left;
-  max-width: 50%;
-}
-
 input{
   display:block;
   height: 50px;
@@ -143,6 +131,8 @@ section {
 .grid-item {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  height: auto;
   background-color: #fff;
   border-radius: 0.4rem;
   overflow: hidden;
@@ -157,15 +147,18 @@ section {
   box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
 }
 
-.card-img {
+.grid-item img {
   display: block;
   width: 100%;
-  height: 20rem;
+  height: auto;
   object-fit: cover;
 }
 
 .card-content {
-  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  padding: 0.5rem;
 }
 
 .card-btn {
