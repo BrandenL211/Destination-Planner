@@ -32,8 +32,6 @@ const updateUI = (res) => {
     sect.appendChild(div1);
     div1.appendChild(div2);
 
-   // resetDate.setAttribute("placeholder", "MM/DD/YYYY");
-   // resetDest.innerHTML = "";
 }
 
 export {updateUI};
